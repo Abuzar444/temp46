@@ -33,12 +33,12 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
-// app.use(
-//   cors({
-//     origin: ["http://localhost:5173", "http://localhost:5100"],
-//     credentials: true,
-//   })
-// );
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "http://localhost:5100"],
+    credentials: true,
+  })
+);
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 app.use(express.static(path.resolve(__dirname, "./client/dist")));
